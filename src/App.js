@@ -12,7 +12,7 @@ function App() {
   const [matchedWith, setMatchedWith] = useState([]);
   const [matchmakeCount, setMatchmakeCount] = useState(0);
   const socket = useRef();
-  //const NAME = process.env.REACT_APP_[NAME]
+  
   // Timestamp: Indikation på hur längesen någon bad om hjälp
   // ✅ Math.random för random färg
   // Kevins MP3-ljud
@@ -21,7 +21,7 @@ function App() {
   // Wishlist: Notifikation
 
   useEffect(() => {
-    socket.current = io(process.env.REACT_APP_[NAME]);
+    socket.current = io(process.env.REACT_APP_BACKEND_URL);
 
     socket.current.on("connect", () => {
       console.log("Connected");
